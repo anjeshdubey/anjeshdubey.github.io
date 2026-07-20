@@ -5,14 +5,22 @@ export const Projects = () => {
       role: 'Creator & Lead Architect',
       description: 'An AI-driven SRE Agent deployed on Modal that automates root cause analysis and incident triage by integrating directly with GitHub and live logging systems.',
       tech: ['Python', 'FastAPI', 'LangChain', 'Modal', 'React'],
-      link: 'https://anjeshdubey.github.io/sentinel',
+      links: [
+        { label: 'Live Demo', href: 'https://anjeshdubey.github.io/sentinel/' },
+        { label: 'Docs', href: 'https://anjeshdubey.github.io/sentinel/engineering/' },
+        { label: 'Code', href: 'https://github.com/anjeshdubey/sentinel' },
+      ],
     },
     {
-      title: 'FlowForge',
+      title: 'FlowStrix',
       role: 'Open Source Maintainer',
       description: 'An agent-native workflow engine allowing developers to compose deterministic directed acyclic graphs (DAGs) for multi-agent LLM systems with built-in state management.',
       tech: ['Python', 'Pydantic', 'AsyncIO', 'Vector Search'],
-      link: 'https://github.com/anjeshdubey/flowforge',
+      links: [
+        { label: 'Live Demo', href: 'https://anjeshdubey.github.io/FlowStrix/' },
+        { label: 'Docs', href: 'https://anjeshdubey.github.io/FlowStrix/engineering/' },
+        { label: 'Code', href: 'https://github.com/anjeshdubey/FlowStrix' },
+      ],
     },
   ];
 
@@ -37,9 +45,13 @@ export const Projects = () => {
                   </span>
                 ))}
               </div>
-              <a href={project.link} target="_blank" rel="noreferrer" style={{ color: 'var(--accent-primary)', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                View Project <span>→</span>
-              </a>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem' }}>
+                {project.links.map((l, i) => (
+                  <a key={i} href={l.href} target="_blank" rel="noreferrer" style={{ color: 'var(--accent-primary)', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                    {l.label} <span>→</span>
+                  </a>
+                ))}
+              </div>
             </div>
           ))}
         </div>
