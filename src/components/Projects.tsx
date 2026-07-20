@@ -12,7 +12,7 @@ export const Projects = () => {
     },
     {
       title: 'FlowStrix',
-      role: 'Open Source Maintainer',
+      role: 'Creator & Architect',
       description: 'An agent-native workflow engine allowing developers to compose deterministic directed acyclic graphs (DAGs) for multi-agent LLM systems with built-in state management.',
       tech: ['Python', 'Pydantic', 'AsyncIO', 'Vector Search'],
       links: [
