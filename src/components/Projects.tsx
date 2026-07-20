@@ -3,12 +3,11 @@ export const Projects = () => {
     {
       title: 'Sentinel',
       role: 'Creator & Lead Architect',
-      description: 'An AI-driven SRE Agent deployed on Modal that automates root cause analysis and incident triage by integrating directly with GitHub and live logging systems.',
-      tech: ['Python', 'FastAPI', 'LangChain', 'Modal', 'React'],
+      description: 'An AI-driven SRE triage agent (deployed on Modal) that reads incident alerts, retrieves relevant runbooks via RAG, calls tools to gather context (ownership, deploys, dependencies, past incidents), and produces a structured root-cause diagnosis — pausing for human approval when confidence is low.',
+      tech: ['Python', 'FastAPI', 'Anthropic SDK', 'LangGraph', 'RAG (Qdrant)', 'Modal'],
       links: [
         { label: 'Live Demo', href: 'https://anjeshdubey.github.io/sentinel/' },
         { label: 'Docs', href: 'https://anjeshdubey.github.io/sentinel/engineering/' },
-        { label: 'Code', href: 'https://github.com/anjeshdubey/sentinel' },
       ],
     },
     {
@@ -19,7 +18,6 @@ export const Projects = () => {
       links: [
         { label: 'Live Demo', href: 'https://anjeshdubey.github.io/FlowStrix/' },
         { label: 'Docs', href: 'https://anjeshdubey.github.io/FlowStrix/engineering/' },
-        { label: 'Code', href: 'https://github.com/anjeshdubey/FlowStrix' },
       ],
     },
   ];
