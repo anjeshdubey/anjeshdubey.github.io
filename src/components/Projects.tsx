@@ -27,7 +27,9 @@ export const Projects = () => {
       ],
       tech: ['Python', 'LangGraph', 'Pydantic v2', 'Instructor', 'FastAPI', 'Qdrant', 'React 18 / TypeScript'],
       links: [
-        { label: 'GitHub Repo', href: 'https://github.com/anjeshdubey/flowstrix' },
+        { label: 'Live Demo', href: 'https://anjesh.ai/FlowStrix/' },
+        { label: 'Engineering Docs', href: 'https://anjesh.ai/FlowStrix/engineering/' },
+        { label: 'GitHub', href: 'https://github.com/anjeshdubey/FlowStrix' },
       ],
     },
     {
