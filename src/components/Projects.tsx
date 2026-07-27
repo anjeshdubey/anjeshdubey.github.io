@@ -11,9 +11,9 @@ export const Projects = () => {
       ],
       tech: ['Python', 'FastAPI', 'LangGraph', 'Qdrant RAG', 'Instructor / Pydantic', 'Modal Serverless', 'SSE'],
       links: [
-        { label: 'Live Demo', href: 'https://anjeshdubey.github.io/sentinel/' },
-        { label: 'Engineering Docs', href: 'https://anjesh.ai/sentinel/engineering/' },
-        { label: 'GitHub', href: 'https://github.com/anjeshdubey/sentinel' },
+        { label: 'Live Demo', href: 'https://anjesh.ai/Sentinel/' },
+        { label: 'Engineering Docs', href: 'https://anjesh.ai/Sentinel/engineering/' },
+        { label: 'GitHub', href: 'https://github.com/anjeshdubey/Sentinel' },
       ],
     },
     {
