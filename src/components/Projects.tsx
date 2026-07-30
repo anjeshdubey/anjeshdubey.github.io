@@ -44,6 +44,7 @@ export const Projects = () => {
       tech: ['Python 3.11', 'LangGraph Checkpointing', 'Instructor', 'FastAPI', 'SSE', 'Pytest (100% Core Coverage)'],
       links: [
         { label: 'Live Demo', href: 'https://anjesh.ai/Audit-Agent-Orchestrator/' },
+        { label: 'Engineering Docs', href: 'https://anjesh.ai/Audit-Agent-Orchestrator/engineering/' },
         { label: 'GitHub Repo', href: 'https://github.com/anjeshdubey/Audit-Agent-Orchestrator' },
       ],
     },
