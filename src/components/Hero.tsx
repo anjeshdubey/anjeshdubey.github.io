@@ -43,10 +43,12 @@ export const Hero = () => {
           <a href="#projects" className="btn btn-primary" id="view-projects-btn">
             Explore AI Builds
           </a>
-          <a href="https://github.com/anjeshdubey" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" id="github-profile-btn">
+          <a href="https://github.com/anjeshdubey" target="_blank" rel="noopener noreferrer" className={`btn btn-secondary ${styles.iconBtn}`} id="github-profile-btn">
+            <svg className={styles.btnIcon} aria-hidden="true"><use href="/icons.svg#github-icon" /></svg>
             GitHub
           </a>
-          <a href="https://linkedin.com/in/anjeshdubey" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" id="linkedin-profile-btn">
+          <a href="https://linkedin.com/in/anjeshdubey" target="_blank" rel="noopener noreferrer" className={`btn btn-secondary ${styles.iconBtn}`} id="linkedin-profile-btn">
+            <svg className={styles.btnIcon} aria-hidden="true"><use href="/icons.svg#linkedin-icon" /></svg>
             LinkedIn
           </a>
         </div>

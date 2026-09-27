@@ -77,3 +77,12 @@
   gap: 1rem;
   align-items: center;
 }
+
+.iconBtn {
+  gap: 0.5rem;
+}
+
+.btnIcon {
+  width: 18px;
+  height: 18px;
+}
