@@ -36,6 +36,11 @@
   box-sizing: border-box;
 }
 
+*:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-main);
@@ -182,4 +187,12 @@ a {
   .grid-cols-2, .grid-cols-3 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border-light);
+  padding: 2.5rem 0;
+  text-align: center;
+  color: var(--text-muted);
 }

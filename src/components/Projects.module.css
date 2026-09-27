@@ -1,0 +1,68 @@
+.introText {
+  margin-bottom: 3rem;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projectTitle {
+  margin-bottom: 0.4rem;
+  font-size: 1.35rem;
+}
+
+.projectRole {
+  font-size: 0.85rem;
+  color: var(--accent-secondary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.projectDescription {
+  font-size: 0.975rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.highlights {
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.highlightItem {
+  margin-bottom: 0.35rem;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.techTag {
+  padding: 0.2rem 0.6rem;
+  background: var(--bg-secondary);
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  border: 1px solid var(--border-light);
+}
+
+.projectLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.projectLink {
+  color: var(--accent-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}

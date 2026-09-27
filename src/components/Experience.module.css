@@ -1,0 +1,65 @@
+.introText {
+  margin-bottom: 3rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.expCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.timelineBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--border-light);
+}
+
+.timelineBarActive {
+  background: var(--accent-gradient);
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.expTitle {
+  font-size: 1.35rem;
+}
+
+.expMeta {
+  color: var(--accent-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.expPeriod {
+  color: var(--text-muted);
+}
+
+.expSummary {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.expBullets {
+  color: var(--text-secondary);
+  margin-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+}

@@ -16,7 +16,7 @@ function App() {
         <Experience />
         <Patents />
       </main>
-      <footer style={{ borderTop: '1px solid var(--border-light)', padding: '2.5rem 0', textAlign: 'center', color: 'var(--text-muted)' }}>
+      <footer className="site-footer">
         <div className="container">
           <p>© {new Date().getFullYear()} Anjesh Dubey. Building high-velocity AI agent platforms.</p>
         </div>
