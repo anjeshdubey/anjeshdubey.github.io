@@ -1,50 +1,54 @@
+import styles from './Hero.module.css';
+
 export const Hero = () => {
   return (
-    <section id="about" className="section container" style={{ minHeight: '85vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-      <div style={{ maxWidth: '850px' }} className="animate-fade-in">
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--bg-glass-light)', border: '1px solid var(--border-light)', padding: '0.4rem 1rem', borderRadius: '9999px', marginBottom: '1.5rem' }}>
-          <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22c55e', display: 'inline-block' }}></span>
-          <span style={{ color: 'var(--accent-primary)', fontSize: '0.875rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+    <section id="about" className={`section container ${styles.heroSection}`}>
+      <div className={`animate-fade-in ${styles.heroContent}`}>
+        <div className={styles.statusBadge}>
+          <span className={styles.statusDot}></span>
+          <span className={styles.statusText}>
             VP / Head of Engineering — AI Agent Platforms
           </span>
         </div>
         
-        <h1 style={{ marginBottom: '1.5rem' }}>
+        <h1 className={styles.heading}>
           Building AI Agent Runtimes &amp; <span className="text-gradient">Enterprise-Scale Systems</span>
         </h1>
         
-        <p style={{ fontSize: '1.25rem', marginBottom: '2.5rem', maxWidth: '720px', color: 'var(--text-secondary)' }}>
+        <p className={styles.description}>
           Senior Director of Software Engineering at Salesforce owning the Flow Automation Platform (~70 engineers, 100B+ daily executions). Hands-on builder architecting multi-provider LLM gateways, LangGraph state machine runtimes, vector RAG pipelines, and code-verified HITL guardrails.
         </p>
 
         {/* Metrics Ribbon */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
-          <div className="glass-panel" style={{ padding: '1rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-primary)' }} className="text-gradient">15+ Yrs</div>
-            <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500 }}>Engineering Leadership</div>
+        <div className={styles.metricsGrid}>
+          <div className={`glass-panel ${styles.metricCard}`}>
+            <div className={`text-gradient ${styles.metricValue}`}>15+ Yrs</div>
+            <div className={styles.metricLabel}>Engineering Leadership</div>
           </div>
-          <div className="glass-panel" style={{ padding: '1rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-primary)' }} className="text-gradient">100B+</div>
-            <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500 }}>Daily Flow Executions</div>
+          <div className={`glass-panel ${styles.metricCard}`}>
+            <div className={`text-gradient ${styles.metricValue}`}>100B+</div>
+            <div className={styles.metricLabel}>Daily Flow Executions</div>
           </div>
-          <div className="glass-panel" style={{ padding: '1rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-primary)' }} className="text-gradient">3 AI Runtimes</div>
-            <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500 }}>Open-Source Agent Builds</div>
+          <div className={`glass-panel ${styles.metricCard}`}>
+            <div className={`text-gradient ${styles.metricValue}`}>3 AI Runtimes</div>
+            <div className={styles.metricLabel}>Open-Source Agent Builds</div>
           </div>
-          <div className="glass-panel" style={{ padding: '1rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-primary)' }} className="text-gradient">5 US Patents</div>
-            <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500 }}>Workflow & System Design</div>
+          <div className={`glass-panel ${styles.metricCard}`}>
+            <div className={`text-gradient ${styles.metricValue}`}>5 US Patents</div>
+            <div className={styles.metricLabel}>Workflow & System Design</div>
           </div>
         </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center' }}>
+        <div className={styles.ctaRow}>
           <a href="#projects" className="btn btn-primary" id="view-projects-btn">
             Explore AI Builds
           </a>
-          <a href="https://github.com/anjeshdubey" target="_blank" rel="noreferrer" className="btn btn-secondary" id="github-profile-btn">
+          <a href="https://github.com/anjeshdubey" target="_blank" rel="noopener noreferrer" className={`btn btn-secondary ${styles.iconBtn}`} id="github-profile-btn">
+            <svg className={styles.btnIcon} aria-hidden="true"><use href="/icons.svg#github-icon" /></svg>
             GitHub
           </a>
-          <a href="https://linkedin.com/in/anjeshdubey" target="_blank" rel="noreferrer" className="btn btn-secondary" id="linkedin-profile-btn">
+          <a href="https://linkedin.com/in/anjeshdubey" target="_blank" rel="noopener noreferrer" className={`btn btn-secondary ${styles.iconBtn}`} id="linkedin-profile-btn">
+            <svg className={styles.btnIcon} aria-hidden="true"><use href="/icons.svg#linkedin-icon" /></svg>
             LinkedIn
           </a>
         </div>

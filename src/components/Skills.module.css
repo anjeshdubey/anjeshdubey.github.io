@@ -1,0 +1,25 @@
+.introText {
+  margin-bottom: 2.5rem;
+}
+
+.categoryTitle {
+  margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+  color: var(--accent-primary);
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skillTag {
+  padding: 0.4rem 0.85rem;
+  background: var(--bg-secondary);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  font-weight: 500;
+}
