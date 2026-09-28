@@ -1,10 +1,13 @@
 import { patents } from '../data/patents';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 import styles from './Patents.module.css';
 
 export const Patents = () => {
+  const ref = useScrollReveal();
+
   return (
     <section id="patents" className="section container">
-      <div className="animate-fade-in delay-200">
+      <div ref={ref} className="scroll-reveal">
         <h2>Issued <span className="text-gradient">US Patents</span></h2>
         <p className={styles.introText}>Granted patents in workflow execution, multi-tenant container delegation, and permission architectures.</p>
         

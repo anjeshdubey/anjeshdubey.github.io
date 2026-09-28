@@ -1,9 +1,12 @@
+import { useScrollReveal } from '../hooks/useScrollReveal';
 import styles from './Contact.module.css';
 
 export const Contact = () => {
+  const ref = useScrollReveal();
+
   return (
     <section id="contact" className="section container">
-      <div className="animate-fade-in delay-200">
+      <div ref={ref} className="scroll-reveal">
         <h2>Get in <span className="text-gradient">Touch</span></h2>
         <p className={styles.introText}>
           Interested in AI agent platforms, engineering leadership, or collaboration opportunities? Let's connect.

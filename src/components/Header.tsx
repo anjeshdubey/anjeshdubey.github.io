@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ThemeToggle } from './ThemeToggle';
 import styles from './Header.module.css';
 
 const navItems = [
@@ -22,16 +23,20 @@ export const Header = () => {
           Anjesh<span className="text-gradient">.ai</span>
         </a>
 
-        <button
-          className={styles.menuToggle}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={menuOpen}
-        >
-          <svg width="24" height="24" aria-hidden="true">
-            <use href={`/icons.svg#${menuOpen ? 'close-icon' : 'menu-icon'}`} />
-          </svg>
-        </button>
+        <div className={styles.headerActions}>
+          <ThemeToggle />
+
+          <button
+            className={styles.menuToggle}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+          >
+            <svg width="24" height="24" aria-hidden="true">
+              <use href={`/icons.svg#${menuOpen ? 'close-icon' : 'menu-icon'}`} />
+            </svg>
+          </button>
+        </div>
 
         <nav
           className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}

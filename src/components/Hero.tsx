@@ -1,9 +1,20 @@
+import { useScrollReveal } from '../hooks/useScrollReveal';
+import { MetricCard } from './MetricCard';
 import styles from './Hero.module.css';
 
+const metrics = [
+  { value: '15+ Yrs', label: 'Engineering Leadership' },
+  { value: '100B+', label: 'Daily Flow Executions' },
+  { value: '3 AI Runtimes', label: 'Open-Source Agent Builds' },
+  { value: '5 US Patents', label: 'Workflow & System Design' },
+];
+
 export const Hero = () => {
+  const ref = useScrollReveal();
+
   return (
     <section id="about" className={`section container ${styles.heroSection}`}>
-      <div className={`animate-fade-in ${styles.heroContent}`}>
+      <div ref={ref} className={`scroll-reveal ${styles.heroContent}`}>
         <div className={styles.statusBadge}>
           <span className={styles.statusDot}></span>
           <span className={styles.statusText}>
@@ -21,22 +32,9 @@ export const Hero = () => {
 
         {/* Metrics Ribbon */}
         <div className={styles.metricsGrid}>
-          <div className={`glass-panel ${styles.metricCard}`}>
-            <div className={`text-gradient ${styles.metricValue}`}>15+ Yrs</div>
-            <div className={styles.metricLabel}>Engineering Leadership</div>
-          </div>
-          <div className={`glass-panel ${styles.metricCard}`}>
-            <div className={`text-gradient ${styles.metricValue}`}>100B+</div>
-            <div className={styles.metricLabel}>Daily Flow Executions</div>
-          </div>
-          <div className={`glass-panel ${styles.metricCard}`}>
-            <div className={`text-gradient ${styles.metricValue}`}>3 AI Runtimes</div>
-            <div className={styles.metricLabel}>Open-Source Agent Builds</div>
-          </div>
-          <div className={`glass-panel ${styles.metricCard}`}>
-            <div className={`text-gradient ${styles.metricValue}`}>5 US Patents</div>
-            <div className={styles.metricLabel}>Workflow & System Design</div>
-          </div>
+          {metrics.map((m) => (
+            <MetricCard key={m.label} value={m.value} label={m.label} />
+          ))}
         </div>
 
         <div className={styles.ctaRow}>
