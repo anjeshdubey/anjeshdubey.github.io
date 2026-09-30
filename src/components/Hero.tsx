@@ -4,9 +4,9 @@ import styles from './Hero.module.css';
 
 const metrics = [
   { value: '15+ Yrs', label: 'Engineering Leadership' },
-  { value: '100B+', label: 'Daily Flow Executions' },
-  { value: '3 AI Runtimes', label: 'Open-Source Agent Builds' },
-  { value: '5 US Patents', label: 'Workflow & System Design' },
+  { value: '700B+ / Mo', label: 'State Machine Executions' },
+  { value: '55%+', label: 'Agentforce Production Layer' },
+  { value: '60M MAU', label: 'Across 135K+ Enterprises' },
 ];
 
 export const Hero = () => {
@@ -27,7 +27,7 @@ export const Hero = () => {
         </h1>
         
         <p className={styles.description}>
-          Senior Director of Software Engineering at Salesforce owning the Flow Automation Platform (~70 engineers, 100B+ daily executions). Hands-on builder architecting multi-provider LLM gateways, LangGraph state machine runtimes, vector RAG pipelines, and code-verified HITL guardrails.
+          Senior Director of Software Engineering at Salesforce owning the Flow platform (~70 engineers, 700B+ monthly executions) powering 55%+ of all Agentforce production actions. Architecting distributed state machine runtimes, headless MCP servers, and deterministic verification for autonomous systems.
         </p>
 
         {/* Metrics Ribbon */}
@@ -38,16 +38,33 @@ export const Hero = () => {
         </div>
 
         <div className={styles.ctaRow}>
-          <a href="#projects" className="btn btn-primary" id="view-projects-btn">
-            Explore AI Builds
+          <a href="#writing" className="btn btn-primary" id="view-writing-btn">
+            Read Systems Writing
           </a>
-          <a href="https://github.com/anjeshdubey" target="_blank" rel="noopener noreferrer" className={`btn btn-secondary ${styles.iconBtn}`} id="github-profile-btn">
-            <svg className={styles.btnIcon} aria-hidden="true"><use href="/icons.svg#github-icon" /></svg>
-            GitHub
+          <a href="#architectures" className="btn btn-secondary" id="view-architectures-btn">
+            Reference Architectures
           </a>
-          <a href="https://linkedin.com/in/anjeshdubey" target="_blank" rel="noopener noreferrer" className={`btn btn-secondary ${styles.iconBtn}`} id="linkedin-profile-btn">
+          <a
+            href="https://linkedin.com/in/anjeshdubey"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`btn btn-secondary ${styles.iconBtn}`}
+            id="linkedin-profile-btn"
+            aria-label="LinkedIn Profile"
+          >
             <svg className={styles.btnIcon} aria-hidden="true"><use href="/icons.svg#linkedin-icon" /></svg>
             LinkedIn
+          </a>
+          <a
+            href="https://github.com/anjeshdubey"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`btn btn-secondary ${styles.iconBtn}`}
+            id="github-profile-btn"
+            aria-label="GitHub Profile"
+          >
+            <svg className={styles.btnIcon} aria-hidden="true"><use href="/icons.svg#github-icon" /></svg>
+            GitHub
           </a>
         </div>
       </div>
