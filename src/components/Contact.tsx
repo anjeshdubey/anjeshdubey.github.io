@@ -7,22 +7,25 @@ export const Contact = () => {
   return (
     <section id="contact" className="section container">
       <div ref={ref} className="scroll-reveal">
-        <h2>Get in <span className="text-gradient">Touch</span></h2>
+        <h2>
+          Executive <span className="text-gradient">Connect</span>
+        </h2>
         <p className={styles.introText}>
-          Interested in AI agent platforms, engineering leadership, or collaboration opportunities? Let's connect.
+          Advisory inquiries, peer exchange, and technical partnership.
         </p>
 
         <div className={styles.contactGrid}>
           <a
-            href="mailto:anjesh.dubey@gmail.com"
+            href="mailto:anjeshdubey@gmail.com"
             className={`glass-panel ${styles.contactCard}`}
+            aria-label="Send direct email"
           >
             <svg className={styles.contactIcon} aria-hidden="true">
               <use href="/icons.svg#email-icon" />
             </svg>
             <div>
               <h3 className={styles.contactLabel}>Email</h3>
-              <span className={styles.contactValue}>anjesh.dubey@gmail.com</span>
+              <span className={styles.contactValue}>anjeshdubey@gmail.com</span>
             </div>
           </a>
 
@@ -31,6 +34,7 @@ export const Contact = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={`glass-panel ${styles.contactCard}`}
+            aria-label="LinkedIn profile"
           >
             <svg className={styles.contactIcon} aria-hidden="true">
               <use href="/icons.svg#linkedin-icon" />
@@ -46,6 +50,7 @@ export const Contact = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={`glass-panel ${styles.contactCard}`}
+            aria-label="GitHub profile"
           >
             <svg className={styles.contactIcon} aria-hidden="true">
               <use href="/icons.svg#github-icon" />

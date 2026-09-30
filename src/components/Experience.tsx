@@ -9,9 +9,13 @@ export const Experience = () => {
   return (
     <section id="experience" className="section container">
       <div ref={ref} className="scroll-reveal">
-        <h2>Professional <span className="text-gradient">Experience</span></h2>
-        <p className={styles.introText}>15+ years of engineering leadership scaling enterprise infrastructure from foundational code to AI agent platforms.</p>
-        
+        <h2>
+          Professional <span className="text-gradient">Experience</span>
+        </h2>
+        <p className={styles.introText}>
+          15+ years of engineering leadership scaling enterprise infrastructure from foundational state machines to AI agent platforms.
+        </p>
+
         <div className={styles.timeline}>
           {experiences.map((exp, idx) => (
             <ExperienceItem key={idx} experience={exp} isFirst={idx === 0} />
