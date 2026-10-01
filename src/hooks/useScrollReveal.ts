@@ -20,7 +20,8 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
           observer.unobserve(el);
         }
       },
-      { threshold: 0.1, ...options }
+      // Any overlap counts: a ratio threshold is unreachable for sections much taller than the viewport.
+      { threshold: 0, ...options }
     );
 
     observer.observe(el);

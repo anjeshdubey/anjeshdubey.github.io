@@ -4,10 +4,10 @@ import { Hero } from './components/Hero';
 import { Writing } from './components/Writing';
 import { EssayReader } from './components/EssayReader';
 import { Experience } from './components/Experience';
-import { Architectures } from './components/Architectures';
-import { SystemsPrimitives } from './components/SystemsPrimitives';
+import { Projects } from './components/Projects';
+import { Patents } from './components/Patents';
 import { Contact } from './components/Contact';
-import { essays, type Essay } from './data/writing';
+import { publishedEssays, type Essay } from './data/writing';
 
 function App() {
   const [selectedEssay, setSelectedEssay] = useState<Essay | null>(null);
@@ -17,7 +17,7 @@ function App() {
     const hash = window.location.hash;
     if (hash.startsWith('#writing/')) {
       const slug = hash.replace('#writing/', '').trim();
-      const matched = essays.find((e) => e.slug === slug);
+      const matched = publishedEssays.find((e) => e.slug === slug);
       if (matched) {
         setSelectedEssay(matched);
         return;
@@ -60,8 +60,8 @@ function App() {
         <Hero />
         <Writing onSelectEssay={handleSelectEssay} />
         <Experience />
-        <Architectures />
-        <SystemsPrimitives />
+        <Projects />
+        <Patents />
         <Contact />
       </main>
 

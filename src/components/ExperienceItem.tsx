@@ -1,4 +1,5 @@
 import type { Experience } from '../data/experience';
+import { anchorProps } from '../data/links';
 import styles from './Experience.module.css';
 
 interface ExperienceItemProps {
@@ -24,5 +25,15 @@ export const ExperienceItem = ({ experience: exp, isFirst = false }: ExperienceI
         <li key={i}>{b}</li>
       ))}
     </ul>
+
+    {exp.links && (
+      <div className={styles.expLinks}>
+        {exp.links.map((link) => (
+          <a key={link.href} {...anchorProps(link.href)} className={styles.expLink}>
+            {link.label}
+          </a>
+        ))}
+      </div>
+    )}
   </div>
 );

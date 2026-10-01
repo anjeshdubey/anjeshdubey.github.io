@@ -3,10 +3,14 @@ import { MetricCard } from './MetricCard';
 import styles from './Hero.module.css';
 
 const metrics = [
-  { value: '15+ Yrs', label: 'Engineering Leadership' },
-  { value: '700B+ / Mo', label: 'State Machine Executions' },
-  { value: '55%+', label: 'Agentforce Production Layer' },
-  { value: '60M MAU', label: 'Across 135K+ Enterprises' },
+  { value: '~70', label: 'engineers in 10 teams across the US and India' },
+  { value: 'Since 2009', label: 'at Salesforce, leading teams since 2017' },
+  { value: '4', label: 'granted US patents as co-inventor', href: '#patents' },
+  {
+    value: '1.3T',
+    label: 'platform automations in March 2022, per Salesforce',
+    href: 'https://www.salesforce.com/news/press-releases/2022/04/27/salesforce-expands-flow-automation/',
+  },
 ];
 
 export const Hero = () => {
@@ -15,34 +19,27 @@ export const Hero = () => {
   return (
     <section id="about" className={`section container ${styles.heroSection}`}>
       <div ref={ref} className={`scroll-reveal ${styles.heroContent}`}>
-        <div className={styles.statusBadge}>
-          <span className={styles.statusDot}></span>
-          <span className={styles.statusText}>
-            VP / Head of Engineering — AI Agent Platforms
-          </span>
-        </div>
-        
         <h1 className={styles.heading}>
           Building AI Agent Runtimes &amp; <span className="text-gradient">Enterprise-Scale Systems</span>
         </h1>
-        
+
         <p className={styles.description}>
-          Senior Director of Software Engineering at Salesforce owning the Flow platform (~70 engineers, 700B+ monthly executions) powering 55%+ of all Agentforce production actions. Architecting distributed state machine runtimes, headless MCP servers, and deterministic verification for autonomous systems.
+          I lead engineering for Salesforce Flow, the platform admins use to automate work in Salesforce and one of the ways Agentforce agents take action. My teams own how a flow is written, what starts it, how it runs at scale, and how customers test and debug it.
         </p>
 
         {/* Metrics Ribbon */}
         <div className={styles.metricsGrid}>
           {metrics.map((m) => (
-            <MetricCard key={m.label} value={m.value} label={m.label} />
+            <MetricCard key={m.label} {...m} />
           ))}
         </div>
 
         <div className={styles.ctaRow}>
-          <a href="#writing" className="btn btn-primary" id="view-writing-btn">
-            Read Systems Writing
+          <a href="#experience" className="btn btn-primary" id="view-experience-btn">
+            Experience
           </a>
-          <a href="#architectures" className="btn btn-secondary" id="view-architectures-btn">
-            Reference Architectures
+          <a href="#projects" className="btn btn-secondary" id="view-projects-btn">
+            Side projects
           </a>
           <a
             href="https://linkedin.com/in/anjeshdubey"

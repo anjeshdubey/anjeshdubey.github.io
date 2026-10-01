@@ -1,0 +1,46 @@
+.introText {
+  margin-bottom: 2.5rem;
+}
+
+.patentCard {
+  display: block;
+  padding: 1.5rem;
+}
+
+.patentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.patentNumber {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--accent-primary);
+  font-size: 1.05rem;
+}
+
+.patentDate {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.patentTitle {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.patentSource {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.patentCard:hover .patentSource {
+  color: var(--accent-primary);
+}
