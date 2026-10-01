@@ -22,6 +22,15 @@ export const Projects = () => {
               <div>
                 <h3 className={styles.projectTitle}>{project.title}</h3>
                 <p className={styles.projectDescription}>{project.description}</p>
+                <p className={styles.projectHighlight}>{project.highlight}</p>
+              </div>
+
+              <div className={styles.techTags}>
+                {project.tech.map((t) => (
+                  <span key={t} className={styles.techTag}>
+                    {t}
+                  </span>
+                ))}
               </div>
 
               <div className={styles.linksRow}>

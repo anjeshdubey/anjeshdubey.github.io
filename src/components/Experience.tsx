@@ -13,7 +13,7 @@ export const Experience = () => {
           Professional <span className="text-gradient">Experience</span>
         </h2>
         <p className={styles.introText}>
-          At Salesforce since 2009: eight years as an engineer, then leading teams from 2017.
+          17 years at Salesforce: engineer on the automation engines, then leading the teams behind Flow, now the execution layer for Agentforce.
         </p>
 
         <div className={styles.timeline}>

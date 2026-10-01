@@ -15,21 +15,16 @@ export const experiences: Experience[] = [
     period: 'Feb 2024 – Present',
     company: 'Salesforce',
     summary:
-      'I lead engineering for Salesforce Flow: authoring, runtime, triggers, testing and debugging, and observability.',
+      'I lead engineering for Salesforce Flow, the deterministic execution engine behind Agentforce across Sales, Service, Marketing and Data Cloud: authoring, runtime, triggers, testing and debugging, and observability.',
     bullets: [
+      'Run the runtime that executes 700B+ process instances a month for 60M monthly active users at 135,000 enterprise customers.',
+      'Led the work that made Flow the deterministic execution layer for Agentforce. 55%+ of Agentforce agent actions in production now run on it.',
       'About 70 engineers in 10 teams across the US and India, led through 4 engineering managers and 7 principal architects.',
-      'Flow is one of the ways Agentforce agents take action. My teams own the runtime those actions run on.',
-      'Made flows callable by outside agents: an autolaunched flow can be published as a tool on Salesforce’s hosted MCP servers.',
       'Reworked runtime memory use and lock handling to cut memory-limit failures and transient UNABLE_TO_LOCK_ROW errors.',
-      'Added version comparison and test tooling so customers can check a change before activating it.',
       'Led the integration of Regrello after the October 2025 acquisition. The product is now Agentforce Operations.',
-      'Moved the org to AI-assisted development, which sped up delivery and bug fixes and raised test coverage.',
+      'Moved the org to AI-native development: 3x developer velocity, bug resolution down from a day to 2–3 hours, and test coverage up from 70% to 95%.',
     ],
     links: [
-      {
-        label: 'Flows as MCP tools',
-        href: 'https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/flows.html',
-      },
       {
         label: 'Regrello acquisition',
         href: 'https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-regrello/',
@@ -42,17 +37,7 @@ export const experiences: Experience[] = [
     period: 'Aug 2020 – Feb 2024',
     company: 'Salesforce',
     summary: 'Led a 30+ engineer org building Flow.',
-    bullets: [
-      'Drove the retirement of Process Builder, moving customers’ new automation onto Flow.',
-      'Shipped HTTP Callout, which lets admins call external services from a flow without code.',
-      'Coached managers and senior engineers across a global org.',
-    ],
-    links: [
-      {
-        label: 'HTTP Callout in Spring ’23',
-        href: 'https://admin.salesforce.com/blog/2023/flow-enhancements-for-admins-learn-moar-spring-23',
-      },
-    ],
+    bullets: ['Coached managers and senior engineers across a global org.'],
   },
   {
     title: 'Engineering Manager → Senior Engineering Manager',
@@ -81,6 +66,5 @@ export const experiences: Experience[] = [
       'Co-designed a custom permission model that separates licensing from entitlements.',
       'Built CI tooling for test-failure triage and flaky-test detection.',
     ],
-    links: [{ label: 'Patents from this work', href: '#patents' }],
   },
 ];

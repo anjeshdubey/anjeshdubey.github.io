@@ -3,14 +3,10 @@ import { MetricCard } from './MetricCard';
 import styles from './Hero.module.css';
 
 const metrics = [
+  { value: '700B+ / Mo', label: 'State Machine Executions' },
+  { value: '55%+', label: 'of Agentforce agent actions run on Flow' },
   { value: '~70', label: 'engineers in 10 teams across the US and India' },
-  { value: 'Since 2009', label: 'at Salesforce, leading teams since 2017' },
-  { value: '4', label: 'granted US patents as co-inventor', href: '#patents' },
-  {
-    value: '1.3T',
-    label: 'platform automations in March 2022, per Salesforce',
-    href: 'https://www.salesforce.com/news/press-releases/2022/04/27/salesforce-expands-flow-automation/',
-  },
+  { value: '17 Yrs', label: 'at Salesforce, 9 leading teams' },
 ];
 
 export const Hero = () => {

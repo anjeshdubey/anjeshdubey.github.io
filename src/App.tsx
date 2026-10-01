@@ -5,7 +5,6 @@ import { Writing } from './components/Writing';
 import { EssayReader } from './components/EssayReader';
 import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
-import { Patents } from './components/Patents';
 import { Contact } from './components/Contact';
 import { publishedEssays, type Essay } from './data/writing';
 
@@ -61,7 +60,6 @@ function App() {
         <Writing onSelectEssay={handleSelectEssay} />
         <Experience />
         <Projects />
-        <Patents />
         <Contact />
       </main>
 

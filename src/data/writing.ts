@@ -27,7 +27,7 @@ const essays: Essay[] = [
     subtitle: 'Why probabilistic models are commodities, and why transactional integrity, rollback boundaries, and state machines are the real bottlenecks of enterprise agents.',
     abstract: 'Frontier LLMs have commoditized semantic classification and intent parsing. The true enterprise bottleneck is the commitment boundary: ensuring an autonomous agent’s writes execute within governed, transactional, and reversible state machine contracts.',
     date: 'September 2026',
-    published: false,
+    published: true,
     thesis: 'In enterprise architecture, reasoning can be probabilistic, but commitment must remain deterministic. The frontier of AI platform engineering is not prompt crafting—it is state machine orchestration and transactional governance.',
     takeaways: [
       'Model intelligence is a commodity; deterministic execution is the defensible enterprise moat.',
@@ -86,7 +86,7 @@ const essays: Essay[] = [
     subtitle: 'Transitioning beyond canvas-based workflows into machine-readable tool contracts for autonomous agent callers.',
     abstract: 'Visual workflow builders were designed for human spatial reasoning. In the agentic era, automation engines must decouple from canvas UIs and expose their capabilities through standardized, machine-readable tool contracts like the Model Context Protocol (MCP).',
     date: 'September 2026',
-    published: false,
+    published: true,
     thesis: 'Headless does not mean lack of interface; it means that business capability is decoupled from visual canvases so that humans, systems, and autonomous agents can discover and invoke the exact same governed logic.',
     takeaways: [
       'Visual canvases are human design surfaces; agents require strict JSON/Pydantic schemas and typed input/output contracts.',

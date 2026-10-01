@@ -7,7 +7,6 @@ const navItems = [
   ...(publishedEssays.length > 0 ? [{ href: '#writing', label: 'Writing' }] : []),
   { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
-  { href: '#patents', label: 'Patents' },
   { href: '#contact', label: 'Contact' },
 ];
 
