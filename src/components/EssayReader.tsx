@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import type { Essay } from '../data/writing';
+import { readTime, type Essay } from '../data/writing';
 import styles from './EssayReader.module.css';
 
 interface EssayReaderProps {
@@ -78,9 +78,9 @@ export const EssayReader = ({ essay, onClose }: EssayReaderProps) => {
           <button
             onClick={onClose}
             className={styles.backBtn}
-            aria-label="Return to Systems Ledger"
+            aria-label="Back to the main page"
           >
-            ← Return to Ledger
+            ← Back
           </button>
 
           <div className={styles.headerActions}>
@@ -103,7 +103,7 @@ export const EssayReader = ({ essay, onClose }: EssayReaderProps) => {
               <span className={styles.categoryBadge}>{essay.category}</span>
               <span className={styles.metaDetail}>{essay.date}</span>
               <span className={styles.metaDetail}>•</span>
-              <span className={styles.metaDetail}>{essay.readTime}</span>
+              <span className={styles.metaDetail}>{readTime(essay)}</span>
             </div>
 
             <h1 className={styles.articleTitle}>{essay.title}</h1>
@@ -116,7 +116,7 @@ export const EssayReader = ({ essay, onClose }: EssayReaderProps) => {
             <p className={styles.thesisText}>{essay.thesis}</p>
           </div>
 
-          {/* Executive Takeaways */}
+          {/* Takeaways */}
           <div className={styles.takeawaysCard}>
             <div className={styles.takeawaysTitle}>
               <span>Key Operational Takeaways</span>
@@ -159,7 +159,7 @@ export const EssayReader = ({ essay, onClose }: EssayReaderProps) => {
             </div>
 
             <button onClick={onClose} className="btn btn-secondary">
-              Back to Systems Ledger ↑
+              Back
             </button>
           </footer>
         </article>

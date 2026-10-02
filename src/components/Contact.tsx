@@ -8,10 +8,10 @@ export const Contact = () => {
     <section id="contact" className="section container">
       <div ref={ref} className="scroll-reveal">
         <h2>
-          Executive <span className="text-gradient">Connect</span>
+          <span className="text-gradient">Contact</span>
         </h2>
         <p className={styles.introText}>
-          Advisory inquiries, peer exchange, and technical partnership.
+          Email is the fastest way to reach me.
         </p>
 
         <div className={styles.contactGrid}>

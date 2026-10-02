@@ -1,13 +1,13 @@
 import { useState } from 'react';
+import { publishedEssays } from '../data/writing';
 import { ThemeToggle } from './ThemeToggle';
 import styles from './Header.module.css';
 
 const navItems = [
-  { href: '#writing', label: 'Writing' },
+  ...(publishedEssays.length > 0 ? [{ href: '#writing', label: 'Writing' }] : []),
   { href: '#experience', label: 'Experience' },
-  { href: '#architectures', label: 'Architectures' },
-  { href: '#systems', label: 'Systems' },
-  { href: '#contact', label: 'Connect' },
+  { href: '#implementations', label: 'Implementations' },
+  { href: '#contact', label: 'Contact' },
 ];
 
 export const Header = () => {

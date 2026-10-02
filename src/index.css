@@ -131,8 +131,9 @@ a {
   padding: 0 2rem;
 }
 
+/* Vertical only: sections also carry .container, which sets the side padding. */
 .section {
-  padding: 6rem 0;
+  padding-block: 6rem;
 }
 
 /* Glassmorphism Components */

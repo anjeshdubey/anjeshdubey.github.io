@@ -5,13 +5,13 @@
   max-width: 720px;
 }
 
-.architecturesGrid {
+.projectsGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
 }
 
-.architectureCard {
+.projectCard {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,69 +19,35 @@
   border-radius: 16px;
 }
 
-.cardHeader {
-  margin-bottom: 1.25rem;
-}
-
-.badge {
-  display: inline-block;
-  font-size: 0.725rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent-secondary);
-  background: rgba(139, 92, 246, 0.1);
-  padding: 0.25rem 0.65rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(139, 92, 246, 0.25);
-  margin-bottom: 0.85rem;
-}
-
-.architectureTitle {
+.projectTitle {
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.3;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.85rem;
 }
 
-.architectureRole {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.architectureDescription {
+.projectDescription {
   font-size: 0.95rem;
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
-.highlights {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.5rem 0;
-  border-left: 2px solid var(--border-light);
-  padding-left: 0.85rem;
-}
-
-.highlightItem {
+.projectHighlight {
   font-size: 0.85rem;
   color: var(--text-muted);
   line-height: 1.5;
-  margin-bottom: 0.6rem;
-}
-
-.highlightItem:last-child {
-  margin-bottom: 0;
+  border-left: 2px solid var(--border-light);
+  padding-left: 0.85rem;
+  margin-bottom: 1.5rem;
 }
 
 .techTags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+  margin-top: auto;
   margin-bottom: 1.5rem;
 }
 
@@ -92,7 +58,6 @@
   color: var(--text-secondary);
   padding: 0.2rem 0.55rem;
   border-radius: 6px;
-  font-family: var(--font-sans);
 }
 
 .linksRow {
@@ -101,25 +66,21 @@
   gap: 1rem;
   border-top: 1px solid var(--border-light);
   padding-top: 1.25rem;
-  margin-top: auto;
 }
 
-.archLink {
+.projectLink {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent-primary);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
   transition: color var(--transition-fast);
 }
 
-.archLink:hover {
+.projectLink:hover {
   color: #60a5fa;
 }
 
 @media (max-width: 1024px) {
-  .architecturesGrid {
+  .projectsGrid {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
