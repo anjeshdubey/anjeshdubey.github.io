@@ -20,11 +20,13 @@ export const ExperienceItem = ({ experience: exp, isFirst = false }: ExperienceI
 
     <p className={styles.expSummary}>{exp.summary}</p>
 
-    <ul className={styles.expBullets}>
-      {exp.bullets.map((b, i) => (
-        <li key={i}>{b}</li>
-      ))}
-    </ul>
+    {exp.bullets.length > 0 && (
+      <ul className={styles.expBullets}>
+        {exp.bullets.map((b, i) => (
+          <li key={i}>{b}</li>
+        ))}
+      </ul>
+    )}
 
     {exp.links && (
       <div className={styles.expLinks}>

@@ -6,7 +6,7 @@ import styles from './Header.module.css';
 const navItems = [
   ...(publishedEssays.length > 0 ? [{ href: '#writing', label: 'Writing' }] : []),
   { href: '#experience', label: 'Experience' },
-  { href: '#projects', label: 'Projects' },
+  { href: '#implementations', label: 'Implementations' },
   { href: '#contact', label: 'Contact' },
 ];
 

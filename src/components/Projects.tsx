@@ -7,13 +7,13 @@ export const Projects = () => {
   const ref = useScrollReveal();
 
   return (
-    <section id="projects" className="section container">
+    <section id="implementations" className="section container">
       <div ref={ref} className="scroll-reveal">
         <h2>
-          Side <span className="text-gradient">Projects</span>
+          Applied Agent Runtimes &amp; <span className="text-gradient">Reference Implementations</span>
         </h2>
         <p className={styles.introText}>
-          Three projects I built in 2026 to learn the agent stack by hand.
+          Working architectures exploring stateful execution, declarative YAML compilers, and deterministic compliance verification, each with a live demo and public code.
         </p>
 
         <div className={styles.projectsGrid}>

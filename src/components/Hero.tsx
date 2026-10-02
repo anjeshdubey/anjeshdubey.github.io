@@ -31,11 +31,11 @@ export const Hero = () => {
         </div>
 
         <div className={styles.ctaRow}>
-          <a href="#experience" className="btn btn-primary" id="view-experience-btn">
-            Experience
+          <a href="#writing" className="btn btn-primary" id="view-writing-btn">
+            Read My Writing
           </a>
-          <a href="#projects" className="btn btn-secondary" id="view-projects-btn">
-            Side projects
+          <a href="#implementations" className="btn btn-secondary" id="view-implementations-btn">
+            Reference Implementations
           </a>
           <a
             href="https://linkedin.com/in/anjeshdubey"
