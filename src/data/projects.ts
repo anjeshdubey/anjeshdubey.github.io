@@ -11,8 +11,8 @@ export interface SideProject {
 
 export const sideProjects: SideProject[] = [
   {
-    id: 'flowstrix',
-    title: 'FlowStrix',
+    id: 'tether',
+    title: 'Tether',
     description:
       'A workflow engine for agents. A YAML file defines the steps (look up, reason, respond, branch, human approval, tool call, wait, hand off) and the engine runs them as a LangGraph state machine.',
     highlight: 'Dynamic LangGraph parallel node execution cuts multi-tool step latency by ~50%.',

@@ -20,7 +20,7 @@ export const experiences: Experience[] = [
       'Run the runtime that executes 700B+ process instances a month for 60M monthly active users at 135,000 enterprise customers.',
       'Led the work that made Flow the deterministic execution layer for Agentforce. 55%+ of Agentforce agent actions in production now run on it.',
       'Lead a global engineering organization of ~70 engineers across platform engineering teams, directing architecture and delivery through 4 engineering managers, 7 principal engineers and 2 architects.',
-      'Spearheaded core runtime architecture refactoring delivering a 56% memory footprint reduction and 35% compute optimization, sharply reducing row-lock contention (UNABLE_TO_LOCK_ROW) under high concurrency.',
+      'Keep scale and performance work on the roadmap against feature pressure, which is what lets the runtime handle 700B+ executions a month. One example: a runtime rework that cut memory use by 56% and compute by 35% and sharply reduced lock contention under high concurrency.',
       'Led the Regrello integration end to end after the October 2025 acquisition: re-architected it to run on Salesforce in 60 days and took it live for customers in January 2026, about three months after close. Leadership recognized it as Salesforce’s fastest acquisition to GA, and it earned a President’s Award. Relaunched in April 2026 as Agentforce Operations.',
       'Moved the org to AI-native development: 3x developer velocity, bug resolution down from a day to 2–3 hours, and test coverage up from 70% to 95%.',
     ],
