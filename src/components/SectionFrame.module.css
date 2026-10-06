@@ -1,0 +1,57 @@
+.sectionGrid {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.34fr) minmax(0, 0.66fr);
+  gap: clamp(3rem, 8vw, 7rem);
+  align-items: start;
+}
+
+.intro {
+  position: sticky;
+  top: 7rem;
+}
+
+.kicker {
+  margin: 0 0 0.9rem;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.title {
+  max-width: 10ch;
+  margin-bottom: 1.25rem;
+  font-size: clamp(2.5rem, 4.8vw, 4.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.lead {
+  max-width: 36ch;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.68;
+}
+
+.content {
+  min-width: 0;
+}
+
+@media (max-width: 860px) {
+  .sectionGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .intro {
+    position: static;
+  }
+
+  .title {
+    max-width: 14ch;
+  }
+
+  .lead {
+    max-width: 62ch;
+  }
+}

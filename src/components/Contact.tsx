@@ -1,23 +1,21 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import frame from './SectionFrame.module.css';
 import styles from './Contact.module.css';
 
-export const Contact = () => {
-  const ref = useScrollReveal();
-
-  return (
-    <section id="contact" className="section container">
-      <div ref={ref} className="scroll-reveal">
-        <h2>
-          Executive <span className="text-gradient">Connect</span>
-        </h2>
-        <p className={styles.introText}>
-          Advisory inquiries, peer exchange, and technical partnership.
+export const Contact = () => (
+  <section id="connect" className="section">
+    <div className={`container ${frame.sectionGrid}`}>
+      <div className={frame.intro}>
+        <p className={frame.kicker}>Connect</p>
+        <h2 className={frame.title}>Let’s compare notes on hard systems problems.</h2>
+        <p className={frame.lead}>
+          I am always interested in thoughtful conversations about AI products, platform engineering, and leading teams through a technology shift.
         </p>
+      </div>
 
-        <div className={styles.contactGrid}>
+        <div className={`${frame.content} ${styles.contactGrid}`}>
           <a
             href="mailto:anjeshdubey@gmail.com"
-            className={`glass-panel ${styles.contactCard}`}
+            className={styles.contactCard}
             aria-label="Send direct email"
           >
             <svg className={styles.contactIcon} aria-hidden="true">
@@ -33,7 +31,7 @@ export const Contact = () => {
             href="https://linkedin.com/in/anjeshdubey"
             target="_blank"
             rel="noopener noreferrer"
-            className={`glass-panel ${styles.contactCard}`}
+            className={styles.contactCard}
             aria-label="LinkedIn profile"
           >
             <svg className={styles.contactIcon} aria-hidden="true">
@@ -49,7 +47,7 @@ export const Contact = () => {
             href="https://github.com/anjeshdubey"
             target="_blank"
             rel="noopener noreferrer"
-            className={`glass-panel ${styles.contactCard}`}
+            className={styles.contactCard}
             aria-label="GitHub profile"
           >
             <svg className={styles.contactIcon} aria-hidden="true">
@@ -61,7 +59,6 @@ export const Contact = () => {
             </div>
           </a>
         </div>
-      </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);

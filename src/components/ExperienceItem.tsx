@@ -7,7 +7,7 @@ interface ExperienceItemProps {
 }
 
 export const ExperienceItem = ({ experience: exp, isFirst = false }: ExperienceItemProps) => (
-  <div className={`glass-panel ${styles.expCard}`}>
+  <article className={styles.expCard}>
     <div className={`${styles.timelineBar} ${isFirst ? styles.timelineBarActive : ''}`} />
 
     <div className={styles.expHeader}>
@@ -19,10 +19,12 @@ export const ExperienceItem = ({ experience: exp, isFirst = false }: ExperienceI
 
     <p className={styles.expSummary}>{exp.summary}</p>
 
-    <ul className={styles.expBullets}>
-      {exp.bullets.map((b, i) => (
-        <li key={i}>{b}</li>
-      ))}
-    </ul>
-  </div>
+    {exp.bullets.length > 0 && (
+      <ul className={styles.expBullets}>
+        {exp.bullets.map((b, i) => (
+          <li key={i}>{b}</li>
+        ))}
+      </ul>
+    )}
+  </article>
 );

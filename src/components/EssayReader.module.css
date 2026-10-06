@@ -61,7 +61,7 @@
   border: 1px solid var(--border-light);
   color: var(--text-primary);
   padding: 0.5rem 1rem;
-  border-radius: 9999px;
+  border-radius: 2px;
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
@@ -88,7 +88,7 @@
   border: 1px solid var(--border-light);
   color: var(--text-secondary);
   padding: 0.5rem 0.85rem;
-  border-radius: 9999px;
+  border-radius: 2px;
   font-size: 0.8rem;
   font-weight: 500;
   cursor: pointer;
@@ -123,12 +123,12 @@
 .categoryBadge {
   font-size: 0.75rem;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.08em;
   color: var(--accent-primary);
   background: rgba(59, 130, 246, 0.1);
   padding: 0.3rem 0.75rem;
-  border-radius: 9999px;
+  border-radius: 2px;
   border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
@@ -153,10 +153,10 @@
 }
 
 .thesisBanner {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
-  border: 1px solid rgba(59, 130, 246, 0.25);
+  background: var(--surface-tinted);
+  border: 1px solid var(--line-strong);
   border-left: 4px solid var(--accent-primary);
-  border-radius: 12px;
+  border-radius: 0;
   padding: 1.5rem;
   margin-bottom: 2.5rem;
 }
@@ -164,7 +164,7 @@
 .thesisLabel {
   font-size: 0.75rem;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.08em;
   color: var(--accent-primary);
   margin-bottom: 0.5rem;
@@ -181,7 +181,7 @@
 .takeawaysCard {
   background: var(--bg-secondary);
   border: 1px solid var(--border-light);
-  border-radius: 14px;
+  border-radius: 0;
   padding: 1.75rem;
   margin-bottom: 3rem;
 }

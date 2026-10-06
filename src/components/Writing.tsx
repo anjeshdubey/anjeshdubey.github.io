@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import { essays, type Essay } from '../data/writing';
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import frame from './SectionFrame.module.css';
 import styles from './Writing.module.css';
 
 interface WritingProps {
@@ -8,22 +7,20 @@ interface WritingProps {
 }
 
 export const Writing = ({ onSelectEssay }: WritingProps) => {
-  const ref = useScrollReveal();
-  const [showAll] = useState(false);
-
-  const displayedEssays = showAll ? essays : essays.filter((e) => e.featured);
+  const displayedEssays = essays.filter((essay) => essay.featured);
 
   return (
-    <section id="writing" className={`section container ${styles.writingSection}`}>
-      <div ref={ref} className="scroll-reveal">
-        <h2>
-          Systems <span className="text-gradient">Writing</span>
-        </h2>
-        <p className={styles.introText}>
-          Field notes on agent runtimes, multi-tenant scale, and deterministic systems.
-        </p>
+    <section id="writing" className="section">
+      <div className={`container ${frame.sectionGrid}`}>
+        <div className={frame.intro}>
+          <p className={frame.kicker}>Writing</p>
+          <h2 className={frame.title}>Notes from building and operating systems.</h2>
+          <p className={frame.lead}>
+            Short essays on the choices that sit between an AI demo and a product someone can trust.
+          </p>
+        </div>
 
-        <div className={styles.essaysGrid}>
+        <div className={`${frame.content} ${styles.essaysGrid}`}>
           {displayedEssays.map((essay) => (
             <article
               key={essay.id}
@@ -48,20 +45,11 @@ export const Writing = ({ onSelectEssay }: WritingProps) => {
                 <h3 className={styles.essayTitle}>{essay.title}</h3>
                 <p className={styles.essayAbstract}>{essay.abstract}</p>
 
-                <ul className={styles.takeawaysPreview}>
-                  {essay.takeaways.slice(0, 2).map((item, idx) => (
-                    <li key={idx} className={styles.takeawayItem}>
-                      • {item}
-                    </li>
-                  ))}
-                </ul>
               </div>
 
               <div className={styles.cardFooter}>
                 <span className={styles.publishDate}>{essay.date}</span>
-                <span className={styles.readAction}>
-                  Read Field Note <span aria-hidden="true">→</span>
-                </span>
+                <span className={styles.readAction}>Read essay</span>
               </div>
             </article>
           ))}

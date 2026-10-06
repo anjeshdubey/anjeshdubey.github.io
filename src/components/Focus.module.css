@@ -1,0 +1,33 @@
+.focusList {
+  border-top: 1px solid var(--line-strong);
+}
+
+.focusItem {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.38fr) minmax(0, 0.62fr);
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.focusItem h3 {
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.focusItem p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+@media (max-width: 620px) {
+  .focusItem {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+}

@@ -1,11 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { Focus } from './components/Focus';
 import { Writing } from './components/Writing';
 import { EssayReader } from './components/EssayReader';
 import { Experience } from './components/Experience';
 import { Architectures } from './components/Architectures';
-import { SystemsPrimitives } from './components/SystemsPrimitives';
+import { EnterpriseScale } from './components/EnterpriseScale';
+import { Principles } from './components/Principles';
 import { Contact } from './components/Contact';
 import { essays, type Essay } from './data/writing';
 
@@ -58,16 +60,18 @@ function App() {
 
       <main id="main-content">
         <Hero />
+        <Focus />
+        <Architectures />
+        <EnterpriseScale />
+        <Principles />
         <Writing onSelectEssay={handleSelectEssay} />
         <Experience />
-        <Architectures />
-        <SystemsPrimitives />
         <Contact />
       </main>
 
       <footer className="site-footer">
         <div className="container">
-          <p>© {new Date().getFullYear()} Anjesh Dubey. Engineering leadership for the agentic era.</p>
+          <p>© {new Date().getFullYear()} Anjesh Dubey. Built with the same care I expect from production systems.</p>
         </div>
       </footer>
 

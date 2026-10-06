@@ -3,11 +3,12 @@ import { ThemeToggle } from './ThemeToggle';
 import styles from './Header.module.css';
 
 const navItems = [
-  { href: '#writing', label: 'Writing' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#architectures', label: 'Architectures' },
   { href: '#systems', label: 'Systems' },
-  { href: '#contact', label: 'Connect' },
+  { href: '#enterprise-scale', label: 'Enterprise scale' },
+  { href: '#principles', label: 'Principles' },
+  { href: '#writing', label: 'Writing' },
+  { href: '#career', label: 'Career' },
+  { href: '#connect', label: 'Connect' },
 ];
 
 export const Header = () => {
@@ -19,7 +20,7 @@ export const Header = () => {
     <header className={styles.header}>
       <div className={`container ${styles.headerInner}`}>
         <a href="#about" className={styles.logo} onClick={closeMenu}>
-          Anjesh<span className="text-gradient">.ai</span>
+          Anjesh<span>.ai</span>
         </a>
 
         <div className={styles.headerActions}>

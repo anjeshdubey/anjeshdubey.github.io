@@ -78,9 +78,9 @@ export const EssayReader = ({ essay, onClose }: EssayReaderProps) => {
           <button
             onClick={onClose}
             className={styles.backBtn}
-            aria-label="Return to Systems Ledger"
+            aria-label="Back to the main page"
           >
-            ← Return to Ledger
+            ← Back
           </button>
 
           <div className={styles.headerActions}>
@@ -89,7 +89,7 @@ export const EssayReader = ({ essay, onClose }: EssayReaderProps) => {
               className={styles.shareBtn}
               aria-label="Copy essay share link"
             >
-              {copied ? '✓ Link Copied' : 'Share Link'}
+              {copied ? 'Link copied' : 'Copy link'}
             </button>
           </div>
         </div>
@@ -112,14 +112,14 @@ export const EssayReader = ({ essay, onClose }: EssayReaderProps) => {
 
           {/* Thesis Callout */}
           <div className={styles.thesisBanner}>
-            <div className={styles.thesisLabel}>Architectural Thesis</div>
+            <div className={styles.thesisLabel}>Thesis</div>
             <p className={styles.thesisText}>{essay.thesis}</p>
           </div>
 
           {/* Executive Takeaways */}
           <div className={styles.takeawaysCard}>
             <div className={styles.takeawaysTitle}>
-              <span>Key Operational Takeaways</span>
+              <span>What matters</span>
             </div>
             <ul className={styles.takeawaysList}>
               {essay.takeaways.map((takeaway, idx) => (
@@ -154,12 +154,12 @@ export const EssayReader = ({ essay, onClose }: EssayReaderProps) => {
             <div className={styles.authorBio}>
               <div className={styles.authorName}>Anjesh Dubey</div>
               <div className={styles.authorTitle}>
-                Senior Director, Software Engineering — Salesforce Flow &amp; Agentforce
+                Engineering leader building reliable AI systems
               </div>
             </div>
 
             <button onClick={onClose} className="btn btn-secondary">
-              Back to Systems Ledger ↑
+              Back to the main page
             </button>
           </footer>
         </article>
