@@ -38,7 +38,7 @@ export const EnterpriseScale = () => (
 
       <div className={frame.content}>
         <div className={styles.caseHeader}>
-          <p>Salesforce Flow case study</p>
+          <p>What building Salesforce Flow taught me</p>
           <h3>From visual automation to a governed execution layer</h3>
           <p>
             The durable value is not a diagram. It is a reusable business capability with a clear contract, platform security, testability, operational evidence, and more than one way to create or invoke it.
@@ -65,11 +65,10 @@ export const EnterpriseScale = () => (
 
         <div className={styles.caseFooter}>
           <p>
-            This case study describes public product architecture and my scope. It intentionally leaves out internal customer, usage, and roadmap details.
+            For a public overview of the product and its developer resources:
           </p>
           <div>
-            <a {...anchorProps('https://www.salesforce.com/agentforce/operations/')}>Agentforce Operations</a>
-            <a {...anchorProps('https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-regrello/')}>Regrello acquisition</a>
+            <a {...anchorProps('https://developer.salesforce.com/developer-centers/flow')}>About Salesforce Flow</a>
           </div>
         </div>
       </div>
