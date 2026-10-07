@@ -1,35 +1,35 @@
-.introText {
-  margin-bottom: 3rem;
-}
-
 .contactGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+  border-top: 1px solid var(--line-strong);
 }
 
 .contactCard {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 34px 1fr;
   gap: 1.25rem;
-  text-decoration: none;
-  cursor: pointer;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.contactCard:hover .contactValue {
+  color: var(--accent);
 }
 
 .contactIcon {
-  width: 32px;
-  height: 32px;
-  color: var(--accent-primary);
-  flex-shrink: 0;
+  width: 27px;
+  height: 27px;
+  color: var(--accent);
 }
 
 .contactLabel {
-  font-size: 1.1rem;
   margin-bottom: 0.15rem;
-  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
 .contactValue {
-  font-size: 0.95rem;
   color: var(--text-secondary);
+  font-size: 0.94rem;
+  transition: color var(--transition-fast);
 }

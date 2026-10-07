@@ -1,73 +1,88 @@
 .header {
-  padding: 1.25rem 0;
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid var(--line);
   background: var(--bg-header);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-light);
+  backdrop-filter: blur(14px);
 }
 
 .headerInner {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 2rem;
   align-items: center;
+  min-height: 72px;
 }
 
 .logo {
+  width: fit-content;
   font-family: var(--font-display);
-  font-weight: 800;
   font-size: 1.5rem;
-  letter-spacing: -0.02em;
-  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  gap: 1.35rem;
+}
+
+.navLink {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid transparent;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.navLink:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
 }
 
 .headerActions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
 }
 
-/* Hamburger toggle — hidden on desktop */
 .menuToggle {
   display: none;
-  background: none;
-  border: none;
+  padding: 0.35rem;
+  border: 0;
+  background: transparent;
   color: var(--text-primary);
   cursor: pointer;
-  padding: 0.25rem;
 }
 
-.nav {
-  display: flex;
-  gap: 1.75rem;
-}
+@media (max-width: 980px) {
+  .headerInner {
+    grid-template-columns: 1fr auto;
+  }
 
-.navLink {
-  font-weight: 500;
-  font-size: 0.95rem;
-}
+  .headerActions {
+    gap: 0.5rem;
+  }
 
-/* Mobile styles */
-@media (max-width: 768px) {
   .menuToggle {
     display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .nav {
-    display: none;
     position: absolute;
     top: 100%;
-    left: 0;
     right: 0;
+    left: 0;
+    display: none;
     flex-direction: column;
     gap: 0;
+    padding: 0.5rem 1rem 1rem;
+    border-bottom: 1px solid var(--line);
     background: var(--bg-header-mobile);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border-light);
-    padding: 0.5rem 0;
   }
 
   .navOpen {
@@ -75,17 +90,12 @@
   }
 
   .navLink {
-    padding: 0.85rem 2rem;
-    font-size: 1rem;
-    border-bottom: 1px solid var(--border-light);
-    transition: background var(--transition-fast);
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
   }
 
   .navLink:last-child {
-    border-bottom: none;
-  }
-
-  .navLink:hover {
-    background: var(--bg-glass-light);
+    border-bottom: 0;
   }
 }

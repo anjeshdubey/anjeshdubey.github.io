@@ -24,114 +24,103 @@ export const essays: Essay[] = [
   {
     id: 'reasoning-vs-commitment',
     slug: 'reasoning-vs-commitment',
-    category: 'Runtime Architecture',
-    title: 'Reasoning vs. Commitment: The Enterprise Agent Bottleneck',
-    subtitle: 'Why probabilistic models are commodities, and why transactional integrity, rollback boundaries, and state machines are the real bottlenecks of enterprise agents.',
-    abstract: 'Frontier LLMs have commoditized semantic classification and intent parsing. The true enterprise bottleneck is the commitment boundary: ensuring an autonomous agent’s writes execute within governed, transactional, and reversible state machine contracts.',
-    readTime: '5 min read',
+    category: 'AI systems',
+    title: 'Generated is not deployable',
+    subtitle: 'The hard part of an enterprise agent begins after the model decides what should happen.',
+    abstract:
+      'Models make it cheap to draft logic. Production systems still need a clear boundary where identity, policy, transactions, tests, and human accountability take over.',
+    readTime: '4 min read',
     date: 'September 2026',
     featured: true,
-    thesis: 'In enterprise architecture, reasoning can be probabilistic, but commitment must remain deterministic. The frontier of AI platform engineering is not prompt crafting—it is state machine orchestration and transactional governance.',
+    thesis:
+      'Reasoning can be probabilistic. A consequential action still needs to cross a governed contract before it changes a system of record.',
     takeaways: [
-      'Model intelligence is a commodity; deterministic execution is the defensible enterprise moat.',
-      'Agents must never write directly to raw database schemas; they must invoke governed, versioned business capabilities.',
-      'Transaction rollbacks, tenant isolation, and identity propagation must be enforced at the runtime execution layer, not left to model discretion.',
-      'State machines provide the necessary checkpointing for human-in-the-loop (HITL) pauses without tearing down process state.'
+      'A generated answer and a deployable capability are different products.',
+      'Agents should invoke stable business contracts instead of improvising writes.',
+      'Identity, rollback, limits, and audit belong in the execution layer.',
+      'Human review should pause and resume the same durable state, not restart the work.',
     ],
     sections: [
       {
-        heading: 'The Commoditization of Reasoning',
+        heading: 'Creation is no longer the bottleneck',
         paragraphs: [
-          'Over the past twenty-four months, frontier language models have radically driven down the marginal cost of cognitive reasoning. Tasks that once demanded bespoke machine learning models—intent detection, unstructured document extraction, sentiment evaluation, and conversational dialogue—can now be addressed with off-the-shelf foundation models via simple API calls.',
-          'Yet despite trillions of tokens processed daily, enterprises remain hesitant to grant autonomous agents full operational authority. The hesitation is rarely about whether the model understood the prompt; it is about what happens when the agent commits a transaction to the system of record.',
-          'Anyone can prompt an LLM to reason through a customer dispute or generate an orchestration plan. The enterprise crisis begins the moment the agent attempts to update an order, reallocate ledger inventory, revoke user permissions, or schedule field technicians.'
-        ]
-      },
-      {
-        heading: 'The Commitment Boundary',
-        paragraphs: [
-          'Enterprise platforms operate on deterministic guarantees: ACID transaction boundaries, field-level security (FLS), record-sharing models, multi-tenant resource quotas, and immutable audit logs. Relational data stores do not understand semantic nuance—a row is locked, a constraint is verified, and a state transition is either atomically committed or rolled back.',
-          'When we introduce probabilistic agents into this environment, we encounter a fundamental impedance mismatch. If an agent hallucinates a parameter during reasoning, the cost is trivial. If an agent executes a partial database mutation before crashing or exceeding a governor limit, the system of record is corrupted.',
-          'This establishes the Commitment Boundary: the architectural separation between where probabilistic reasoning ends and where deterministic execution begins.'
+          'A model can now draft a workflow, a query, or an integration in minutes. That is a meaningful change, but it does not remove the work required to trust the result. It moves attention from producing syntax to proving behavior.',
+          'The questions that remain are familiar: Which identity is acting? What is the allowed scope? What happens after a partial failure? Can the change be tested, reviewed, rolled back, and explained to the next operator?',
         ],
-        callout: 'Rule of Enterprise Agentics: Reasoning can be probabilistic, but commitment must remain deterministic. The agent decides what should happen; the platform state machine controls how it is executed.'
       },
       {
-        heading: 'Why Agents Must Not Write Bespoke Code at Runtime',
+        heading: 'The commitment boundary',
         paragraphs: [
-          'An early pattern championed by demo builders was dynamic code execution: instructing the LLM to write ad-hoc Python or SQL scripts and running them against production databases. In an enterprise environment, this pattern is catastrophic.',
-          'Allowing an LLM to generate bespoke data-mutation scripts bypasses compliance governance, breaks schema change management, invalidates deterministic testing, and creates an untraceable security surface. When an outage occurs at 2:00 AM, site reliability engineers cannot audit thousands of unique, ephemeral scripts generated on the fly.',
-          'The winning architectural pattern is capability encapsulation. Instead of writing code, agents must discover and invoke pre-governed business capabilities—reusable autolaunched state machines that encapsulate transactional logic, permission checks, rollback handlers, and causal audit trails.'
-        ]
+          'Reasoning is where ambiguity is useful. A model can interpret a request, gather context, compare options, and propose a next step. Commitment is where ambiguity becomes risk. Updating an order, changing access, issuing a refund, or promising a delivery needs a narrower path.',
+          'A governed capability provides that path. It defines its inputs and outputs, checks identity and policy, owns the transaction, and records what happened. The agent chooses an approved action. The capability performs it.',
+        ],
+        callout: 'Let the model stay flexible in thought. Make the route to a consequential action explicit.',
       },
       {
-        heading: 'Checkpointing and Human-in-the-Loop State Serialization',
+        heading: 'Stable capabilities beat generated scripts',
         paragraphs: [
-          'Autonomous systems will inevitably encounter edge cases where confidence drops below operational thresholds or where high-consequence policies require human authorization. A robust runtime must support deterministic pause and resume semantics.',
-          'By modeling agent workflows as durable state machines, the platform can serialize process memory to persistent storage at any node in the execution graph. The agent can freeze execution, yield control, dispatch an interactive approval card to Slack, Teams, or CRM, and wait for human review.',
-          'Upon human sign-off, the state machine rehydrates from memory without re-running upstream LLM inferences or risking duplicate transaction mutations. This bridges human oversight with automated throughput.'
-        ]
+          'If every request produces a new script, the organization gains creation speed and inherits a growing set of security assumptions, error conventions, and owners. The apparent shortcut becomes an operating problem.',
+          'A reusable business capability is slower to define once and cheaper to trust many times. It can serve a user interface, an event, another service, and an agent without duplicating the business rule for each caller.',
+        ],
       },
       {
-        heading: 'Architecting for the Next Decade of Enterprise AI',
+        heading: 'Human review is part of the runtime',
         paragraphs: [
-          'As frontier models continue to advance, the distinction between proprietary LLMs will narrow. The lasting competitive moat for enterprise platforms will not be the model powering the agent, but the resilience of the execution platform beneath it.',
-          'Platforms that master deterministic state machines, causal tracing, fine-grained identity propagation, and transactional safety boundaries will become the indispensable operating systems of the autonomous enterprise.'
-        ]
-      }
-    ]
+          'Some decisions are uncertain, high consequence, or explicitly reserved for a person. A production agent should be able to stop, preserve its state and evidence, request a decision, and continue without repeating earlier actions.',
+          'That makes accountability a system property instead of a message in a prompt. The workflow knows where review is required, who can provide it, and what should happen next.',
+        ],
+      },
+    ],
   },
   {
     id: 'mcp-headless-runtimes',
     slug: 'mcp-headless-runtimes',
-    category: 'Headless Systems',
-    title: 'Headless Runtimes and the MCP Paradigm',
-    subtitle: 'Transitioning beyond canvas-based workflows into machine-readable tool contracts for autonomous agent callers.',
-    abstract: 'Visual workflow builders were designed for human spatial reasoning. In the agentic era, automation engines must decouple from canvas UIs and expose their capabilities through standardized, machine-readable tool contracts like the Model Context Protocol (MCP).',
-    readTime: '6 min read',
+    category: 'Product architecture',
+    title: 'One capability, many surfaces',
+    subtitle: 'Why AI should expand how a business capability is created and used without creating a different implementation for every channel.',
+    abstract:
+      'A visual builder, an IDE, a chat surface, an event, and an agent can share the same business capability when the contract and runtime are separate from the interface.',
+    readTime: '4 min read',
     date: 'September 2026',
     featured: true,
-    thesis: 'Headless does not mean lack of interface; it means that business capability is decoupled from visual canvases so that humans, systems, and autonomous agents can discover and invoke the exact same governed logic.',
+    thesis:
+      'Headless does not mean interface-free. It means the business capability is not trapped inside one interface.',
     takeaways: [
-      'Visual canvases are human design surfaces; agents require strict JSON/Pydantic schemas and typed input/output contracts.',
-      'Model Context Protocol (MCP) provides a vendor-neutral protocol for dynamic tool discovery, capability negotiation, and execution.',
-      'Causal transaction tracing must link human user intent, agent conversational turns, and backend platform execution into one unified graph.',
-      'A single autolaunched state machine can serve simultaneously as an event trigger, a UI action, and an agent tool.'
+      'People and agents need different ways to understand the same capability.',
+      'Typed inputs, outputs, identity, and failure behavior form the durable contract.',
+      'A common runtime prevents channel-specific copies of business logic.',
+      'Operational evidence should follow the work across every surface.',
     ],
     sections: [
       {
-        heading: 'The Visual Canvas Paradox',
+        heading: 'The canvas is a surface, not the product',
         paragraphs: [
-          'For the past fifteen years, enterprise low-code automation was defined by the visual drag-and-drop canvas. Visual builders democratized workflow creation, enabling administrators and business analysts to wire triggers, decision gates, and database operations into flowchart graphs.',
-          'However, visual canvases are fundamentally human-centric abstractions. They organize logic spatially—using coordinates, layout grids, and visual connectors. Autonomous agents do not perceive spatial layouts; they require declarative schemas, deterministic type definitions, input validation rules, and structured error responses.',
-          'When an enterprise attempts to adapt an existing canvas engine for AI agents simply by wrapping a chat interface on top of the designer, it creates severe cognitive and architectural overhead. The engine must decouple its authoring surface from its runtime execution.'
-        ]
-      },
-      {
-        heading: 'Model Context Protocol (MCP) as the Enterprise Contract',
-        paragraphs: [
-          'The industry’s rapid convergence on the Model Context Protocol (MCP) marks a pivotal transition in systems architecture. MCP establishes an open, standard protocol for exposing tools, resources, and contextual prompts to language models, whether running locally or across distributed clouds.',
-          'By exposing enterprise state machines via hosted MCP servers, organizations transform disparate business operations into a unified, machine-discoverable tool catalog. An autonomous agent can query the MCP server, inspect the JSON schema for an order cancellation capability, evaluate required permissions, and construct a valid execution payload without human intervention.'
+          'Visual builders are good at helping a person inspect sequence, branches, and dependencies. They are less useful to an agent, which needs a machine-readable contract with clear inputs, outputs, and failure behavior.',
+          'The mistake is to choose one interface as the source of truth. The business capability should live beneath the surface so each user can interact with it in the form that fits the job.',
         ],
-        callout: 'The MCP shift turns business logic into typed API contracts. The same process that runs when an admin clicks a button is exposed as an MCP tool for an autonomous agent.'
       },
       {
-        heading: 'Causal Tracing Across Autonomous Execution Chains',
+        heading: 'The contract travels',
         paragraphs: [
-          'In human-driven workflows, causal tracing is straightforward: user ID Alice clicked button X at timestamp T, producing transaction log L. Identity, intent, and audit are tightly coupled.',
-          'In autonomous agent architectures, execution causality fractures across multiple non-deterministic boundaries. An agent might consume a Slack message, make three internal LLM reasoning passes, call a search retrieval tool, invoke an MCP workflow tool, encounter a validation error, correct its input, and re-attempt execution.',
-          'To ensure enterprise observability, platforms must implement causal transaction graphs. Every MCP tool invocation must propagate parent trace IDs, conversation turn IDs, agent model hashes, and authenticated user delegation contexts through the execution stack.',
-          'When an auditor or SRE inspects a failure, they must be able to traverse seamlessly from the high-level prompt dialogue all the way down to the low-level database row lock.'
-        ]
+          'A well-defined capability can start from a record change, a schedule, a button, a conversation, or a tool call. Each entry point should reach the same validation, policy, execution, and history.',
+          'Protocols such as MCP make discovery and invocation easier for agents. The deeper architectural value is not the protocol itself. It is the decision to make business logic callable through a stable, governed contract.',
+        ],
+        callout: 'The same action should not become five different systems because it appears in five different places.',
       },
       {
-        heading: 'The Dual-Mode Enterprise: Visual and Headless Coexistence',
+        heading: 'Tracing must cross the surface boundary',
         paragraphs: [
-          'The emergence of headless MCP runtimes does not render visual canvases obsolete. Instead, it redefines their purpose. Visual builders remain the premier governance, debugging, and inspection surface for human architects.',
-          'In a mature enterprise architecture, human admins use visual surfaces to define guardrails, inspect live execution paths, review anomalies, and simulate edge cases. Meanwhile, autonomous agents interact with the same underlying engine headlessly via MCP tool contracts.',
-          'By separating the execution engine from the presentation layer, the enterprise achieves agility without sacrificing institutional control.'
-        ]
-      }
-    ]
-  }
+          'When an agent calls a tool that starts a workflow and updates a record, the operator needs a connected account of what happened. The request, delegated identity, model decision, tool call, workflow path, and final transaction belong to one causal story.',
+          'Without that story, every new interface creates another gap for an operator to reconstruct during an incident.',
+        ],
+      },
+      {
+        heading: 'More interfaces should create more reuse',
+        paragraphs: [
+          'A mature platform lets people author and inspect visually, work in an IDE when precision matters, invoke through an agent, and receive operational help in chat. Those experiences should strengthen a shared capability rather than fragment it.',
+          'That is the practical promise of headless architecture: more ways to work, with fewer copies of the truth.',
+        ],
+      },
+    ],
+  },
 ];

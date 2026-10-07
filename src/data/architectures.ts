@@ -6,67 +6,86 @@ export interface ArchitectureLink {
 export interface ReferenceArchitecture {
   id: string;
   title: string;
-  badge: string;
-  role: string;
-  description: string;
-  highlights: string[];
-  tech: string[];
+  type: string;
+  problem: string;
+  designChoice: string;
+  hardPart: string;
+  learning: string;
+  architecture: string[];
   links: ArchitectureLink[];
 }
 
 export const referenceArchitectures: ReferenceArchitecture[] = [
   {
+    id: 'axiom8',
+    title: 'Axiom8',
+    type: 'Adaptive learning product',
+    problem:
+      'Middle-school math club students needed practice that met them at their level, while volunteers needed a simple way to run shared weekly problem sessions.',
+    designChoice:
+      'I separated personal practice from club sessions. Adaptive answers shape each student’s learning plan; club answers stay isolated so a group activity never distorts personal mastery.',
+    hardPart:
+      'The difficult work is not generating more questions. It is selecting the right next question, tracking exposure and mastery, and making sure AI-assisted content is solved and checked before a student sees it.',
+    learning:
+      'Designing for real students and volunteers made the product boundary clearer: personalization and group facilitation are related, but they are different jobs.',
+    architecture: ['Diagnostic', 'Skill model', 'Adaptive selection', 'Verified question pipeline', 'Explanation', 'Spaced review'],
+    links: [{ label: 'Live product', href: 'https://axiomacademy.app/' }],
+  },
+  {
     id: 'flowstrix',
-    title: 'FlowStrix — Agent-Native Workflow Engine',
-    badge: 'Declarative State Machine',
-    role: 'Creator & Architect',
-    description:
-      'An agent-native declarative workflow engine exploring what low-code automation and state machines look like when rebuilt natively for the AI era. Executes declarative YAML agent contracts across 8 step primitives (lookup, reason, respond, branch, hitl, tool, wait, handoff) with dynamic graph parallelization.',
-    highlights: [
-      'Dynamic LangGraph parallel node execution cuts multi-tool step latency by ~50%.',
-      'Instructor Ghostwriter NL-to-YAML compiler + AI simulation runner with LLM-as-a-Judge evaluators (151 passing tests).',
-    ],
-    tech: ['Python', 'LangGraph StateGraph', 'Pydantic v2', 'Instructor', 'FastAPI', 'Qdrant', 'React / TypeScript'],
+    title: 'FlowStrix',
+    type: 'Agent workflow engine',
+    problem:
+      'Agent demos often hide control flow inside application code, which makes the system difficult to review, test, and change.',
+    designChoice:
+      'I made the workflow a typed YAML contract and compile it into a state graph with explicit steps for reasoning, tools, branching, waiting, human review, and handoff.',
+    hardPart:
+      'Parallel execution must reduce latency without making state merges, retries, and failure behavior unpredictable.',
+    learning:
+      'A declarative contract is valuable only when the runtime makes its guarantees visible. The compiler and execution trace matter as much as the syntax.',
+    architecture: ['YAML contract', 'Schema validation', 'Graph compiler', 'Stateful runtime', 'Human checkpoint', 'Execution trace'],
     links: [
-      { label: 'Live Demo', href: 'https://anjesh.ai/FlowStrix/' },
-      { label: 'Engineering Docs', href: 'https://anjesh.ai/FlowStrix/engineering/' },
-      { label: 'GitHub', href: 'https://github.com/anjeshdubey/FlowStrix' },
+      { label: 'Live demo', href: 'https://anjesh.ai/FlowStrix/' },
+      { label: 'Engineering notes', href: 'https://anjesh.ai/FlowStrix/engineering/' },
+      { label: 'Code', href: 'https://github.com/anjeshdubey/FlowStrix' },
     ],
   },
   {
     id: 'sentinel',
-    title: 'Sentinel — AI SRE Triage Platform',
-    badge: 'Autonomous Incident Triage',
-    role: 'Creator & Lead Architect',
-    description:
-      'An AI-driven SRE triage platform that ingests real-time incident alerts (PagerDuty, Grafana, Slack), enriches telemetry via CMDB tool calling, retrieves matching runbooks via Qdrant vector RAG, and streams structured diagnoses live. Features a LangGraph HITL interrupt gate for human sign-off when model confidence is low (τ < 0.80).',
-    highlights: [
-      'Multi-provider LLM gateway (Together AI, Groq, Gemini, Anthropic) with Upstash Redis semantic caching (-98% inference cost).',
-      '369 passing tests (unit, functional SSE stream mocks, and real-API integration tests) with P50 cached latency <2s.',
-    ],
-    tech: ['Python', 'FastAPI', 'LangGraph HITL', 'Qdrant Vector RAG', 'Instructor / Pydantic', 'Modal Serverless', 'SSE'],
+    title: 'Sentinel',
+    type: 'Incident triage agent',
+    problem:
+      'On-call engineers lose time gathering ownership, deploy, alert, and runbook context before they can form a useful diagnosis.',
+    designChoice:
+      'The system gathers evidence first, produces a structured diagnosis second, and pauses low-confidence results for a person instead of presenting every answer as certain.',
+    hardPart:
+      'Evidence arrives from different tools with different failure modes. The workflow must degrade clearly when context is missing and keep model output grounded in what it actually retrieved.',
+    learning:
+      'The useful unit is not a clever answer. It is a diagnosis with enough evidence and uncertainty for an engineer to decide what to do next.',
+    architecture: ['Alert intake', 'Service context', 'Runbook retrieval', 'Structured diagnosis', 'Confidence gate', 'Human decision'],
     links: [
-      { label: 'Live Demo', href: 'https://anjesh.ai/Sentinel/' },
-      { label: 'Engineering Docs', href: 'https://anjesh.ai/Sentinel/engineering/' },
-      { label: 'GitHub', href: 'https://github.com/anjeshdubey/Sentinel' },
+      { label: 'Live demo', href: 'https://anjesh.ai/Sentinel/' },
+      { label: 'Engineering notes', href: 'https://anjesh.ai/Sentinel/engineering/' },
+      { label: 'Code', href: 'https://github.com/anjeshdubey/Sentinel' },
     ],
   },
   {
     id: 'audit-agent',
-    title: 'Audit Agent Orchestrator — Deterministic Review',
-    badge: 'Deterministic Verification',
-    role: 'Creator & Lead Architect',
-    description:
-      'A citation-grounded compliance review agent automating SOC 2-style control testing across policy documents. Features a code-level verbatim quote verification engine that rejects LLM self-reported hallucinations, paired with a LangGraph MemorySaver review queue for human sign-off.',
-    highlights: [
-      '100% citation authenticity guaranteed by literal string matching before code-derived confidence scoring.',
-      'Interactive SSE live review queue allowing auditors to inspect, approve, or reject evidence with notes before workpaper assembly.',
-    ],
-    tech: ['Python 3.11', 'LangGraph Checkpointing', 'Instructor', 'FastAPI', 'SSE Streams', 'Pytest (100% Core Coverage)'],
+    title: 'Audit Agent Orchestrator',
+    type: 'Verified compliance review',
+    problem:
+      'A compliance agent can write a convincing control assessment while quietly inventing or misquoting the evidence beneath it.',
+    designChoice:
+      'The model proposes evidence and a verdict. Code checks every quoted passage against the source before scoring, and a reviewer approves or rejects the work.',
+    hardPart:
+      'The workflow has to preserve evidence, confidence, reviewer notes, and state across a pause without blurring what the model inferred and what the source actually said.',
+    learning:
+      'Deterministic checks do not replace model reasoning. They narrow the space in which the model is allowed to be wrong.',
+    architecture: ['Document intake', 'Evidence retrieval', 'Exact quote check', 'Code-derived score', 'Review queue', 'Workpaper'],
     links: [
-      { label: 'Live Demo', href: 'https://anjesh.ai/Audit-Agent-Orchestrator/' },
-      { label: 'Engineering Docs', href: 'https://anjesh.ai/Audit-Agent-Orchestrator/engineering/' },
-      { label: 'GitHub Repo', href: 'https://github.com/anjeshdubey/Audit-Agent-Orchestrator' },
+      { label: 'Live demo', href: 'https://anjesh.ai/Audit-Agent-Orchestrator/' },
+      { label: 'Engineering notes', href: 'https://anjesh.ai/Audit-Agent-Orchestrator/engineering/' },
+      { label: 'Code', href: 'https://github.com/anjeshdubey/Audit-Agent-Orchestrator' },
     ],
   },
 ];

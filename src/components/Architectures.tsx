@@ -1,68 +1,65 @@
 import { referenceArchitectures } from '../data/architectures';
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import frame from './SectionFrame.module.css';
 import styles from './Architectures.module.css';
 
-export const Architectures = () => {
-  const ref = useScrollReveal();
-
-  return (
-    <section id="architectures" className="section container">
-      <div ref={ref} className="scroll-reveal">
-        <h2>
-          Applied Agent Runtimes &amp; <span className="text-gradient">Reference Implementations</span>
-        </h2>
-        <p className={styles.introText}>
-          Production-grade architectures exploring stateful execution, declarative YAML compilers, and deterministic compliance verification.
+export const Architectures = () => (
+  <section id="systems" className="section">
+    <div className={`container ${frame.sectionGrid}`}>
+      <div className={frame.intro}>
+        <p className={frame.kicker}>Independent AI systems</p>
+        <h2 className={frame.title}>I build to sharpen the decisions I lead.</h2>
+        <p className={frame.lead}>
+          Each system starts with a real problem and makes one architectural bet explicit. The point is not a list of tools. It is what the design teaches when it meets users, state, failure, and review.
         </p>
+      </div>
 
-        <div className={styles.architecturesGrid}>
-          {referenceArchitectures.map((arch) => (
-            <div key={arch.id} id={`arch-card-${arch.id}`} className={`glass-panel ${styles.architectureCard}`}>
+      <div className={`${frame.content} ${styles.systemsList}`}>
+        {referenceArchitectures.map((system) => (
+          <article key={system.id} id={`system-${system.id}`} className={styles.system}>
+            <header className={styles.systemHeader}>
               <div>
-                <div className={styles.cardHeader}>
-                  <span className={styles.badge}>{arch.badge}</span>
-                  <h3 className={styles.architectureTitle}>{arch.title}</h3>
-                  <div className={styles.architectureRole}>{arch.role}</div>
-                </div>
-
-                <p className={styles.architectureDescription}>{arch.description}</p>
-
-                <ul className={styles.highlights}>
-                  {arch.highlights.map((h, i) => (
-                    <li key={i} className={styles.highlightItem}>
-                      • {h}
-                    </li>
-                  ))}
-                </ul>
+                <p>{system.type}</p>
+                <h3>{system.title}</h3>
               </div>
+              <div className={styles.linksRow}>
+                {system.links.map((link) => (
+                  <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </header>
 
+            <div className={styles.storyGrid}>
               <div>
-                <div className={styles.techTags}>
-                  {arch.tech.map((t, i) => (
-                    <span key={i} className={styles.techTag}>
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                <div className={styles.linksRow}>
-                  {arch.links.map((link, i) => (
-                    <a
-                      key={i}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.archLink}
-                    >
-                      {link.label} <span aria-hidden="true">→</span>
-                    </a>
-                  ))}
-                </div>
+                <h4>Problem</h4>
+                <p>{system.problem}</p>
+              </div>
+              <div>
+                <h4>Design choice</h4>
+                <p>{system.designChoice}</p>
+              </div>
+              <div>
+                <h4>Hard part</h4>
+                <p>{system.hardPart}</p>
+              </div>
+              <div>
+                <h4>What I learned</h4>
+                <p>{system.learning}</p>
               </div>
             </div>
-          ))}
-        </div>
+
+            <div className={styles.architecturePath} aria-label={`${system.title} architecture`}>
+              {system.architecture.map((step, index) => (
+                <div key={step}>
+                  <span>{step}</span>
+                  {index < system.architecture.length - 1 && <i aria-hidden="true" />}
+                </div>
+              ))}
+            </div>
+          </article>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
